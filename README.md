@@ -1,5 +1,12 @@
 # socket-protect
 
+### **Requirements**
+
+> - Nodejs v8.x
+> - Socket.io v2.x
+
+----------
+
 ### **Installation**
 
 `npm install socket-protect --save`
