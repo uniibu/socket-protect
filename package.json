@@ -1,8 +1,11 @@
 {
   "name": "socket-protect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple spam protection for socket.io 2.x",
   "main": "app.js",
+  "engine": {
+    "node": ">=8"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
