@@ -1,6 +1,6 @@
 {
   "name": "socket-protect",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple spam protection for socket.io 2.x",
   "main": "app.js",
   "engine": {

@@ -2,7 +2,7 @@ const url = require('url');
 let totalConnections = 0;
 const ipConnectionCounter = {};
 let timestampEvent = Date.now();
-let debug;
+
 const noop = () => {};
 const defaultOpts = {
   origin: [],
@@ -22,7 +22,7 @@ const defaultOpts = {
 };
 
 const protectHandshake = (io, socket, protectOpts) => {
-  debug = (...args) => {
+  const debug = (...args) => {
     if (o.debug) {
       console.log('[Protect]:', args.join(' '));
     }
@@ -96,7 +96,7 @@ const protectHandshake = (io, socket, protectOpts) => {
 };
 
 const protectConnect = (socket, protectOpts) => {
-  debug = (...args) => {
+  const debug = (...args) => {
     if (o.debug) {
       console.log('[Protect]:', args.join(' '));
     }
@@ -110,11 +110,7 @@ const protectConnect = (socket, protectOpts) => {
     debug('Authenticating', response);
     isAuth = response;
   });
-  const debug = (...args) => {
-    if (o.debug) {
-      console.log('[Protect]:', args.join(' '));
-    }
-  };
+
   setTimeout(() => {
     if (!isAuth) {
       debug(`Socket from ${ip} did not join in ${o.login.timeout / 1000} seconds, disconnecting`);
