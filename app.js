@@ -95,6 +95,11 @@ const protectHandshake = (io, socket, protectOpts) => {
 };
 
 const protectConnect = (socket, protectOpts) => {
+    const debug = (...args) => {
+    if (o.debug) {
+      console.log('[Protect]:', args.join(' '));
+    }
+  };
   const handshake = socket.handshake;
   const ip = handshake.headers['cf-connecting-ip'] || socket.request.connection.remoteAddress;
   const o = Object.assign(defaultOpts, protectOpts);
