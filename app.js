@@ -2,6 +2,7 @@ const url = require('url');
 let totalConnections = 0;
 const ipConnectionCounter = {};
 let timestampEvent = Date.now();
+let debug;
 const noop = () => {};
 const defaultOpts = {
   origin: [],
@@ -21,7 +22,7 @@ const defaultOpts = {
 };
 
 const protectHandshake = (io, socket, protectOpts) => {
-  const debug = (...args) => {
+  debug = (...args) => {
     if (o.debug) {
       console.log('[Protect]:', args.join(' '));
     }
@@ -95,7 +96,7 @@ const protectHandshake = (io, socket, protectOpts) => {
 };
 
 const protectConnect = (socket, protectOpts) => {
-    const debug = (...args) => {
+  debug = (...args) => {
     if (o.debug) {
       console.log('[Protect]:', args.join(' '));
     }
